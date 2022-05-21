@@ -1,0 +1,9 @@
+.ngoDiv {
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.ngoDiv:hover {
+  background-color: black;
+  color: white;
+}
