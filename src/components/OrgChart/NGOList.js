@@ -1,22 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import "./NGOList.css";
-import { Link } from "react-router-dom";
 
-function NGOList({ name, id }) {
-  const [clicked, setClicked] = useState(true);
-  let clickHandler = () => {
-    setClicked(false);
-  };
-
-  if (clicked === true) {
-    return (
-      <Link exact to="/kerala">
-        <div className="ngoDiv" onClick={() => clickHandler}>
-          <h2>{name}</h2>
-        </div>
-      </Link>
-    );
-  }
+function NGOList({ name, onClick, id }) {
+  return (
+    <div className="ngoDiv" onClick={onClick(name)}>
+      <h2 id={id}>{name}</h2>
+    </div>
+  );
 }
 
 export default NGOList;
