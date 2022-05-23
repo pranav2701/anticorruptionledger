@@ -19,7 +19,7 @@ const Transactions = () => {
         <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
           <div className="md:w-1/4 py-64 md:mb-0 mb-6 flex flex-col text-center items-center">
             <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-orange-100 text-orange-500 mb-5 flex-shrink-0">
-              <button onClick={checkNext}>{'<'}</button>
+              <button className="direct" onClick={checkNext}>{'<'}</button>
             </div>
           </div>
           <div className="md:w-2/4 md:mb-0 mb-6 flex flex-col text-center items-center">
@@ -49,7 +49,8 @@ const Transactions = () => {
                 onClick={() => check(2)}
               />
               <label htmlFor="s1" id="slide1">
-                {/* <img className="fea" src="https://picsum.photos/200/200" height="100%" width="100%"/> */}
+                <h2>Connect your Wallet to Donate.</h2>
+                <button className="ConnectWallet" type="button">Connect Wallet</button>
               </label>
               <label htmlFor="s2" id="slide2">
                 {/* <img className="fea" src="https://picsum.photos/200/300" height="100%" width="100%"/> */}
@@ -61,7 +62,7 @@ const Transactions = () => {
           </div>
           <div className="md:w-1/4 py-64 md:mb-0 mb-6 flex flex-col text-center items-center">
             <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-orange-100 text-orange-500 mb-5 flex-shrink-0">
-              <button onClick={checkNext}>{'>'}</button>
+              <button className="direct" onClick={checkNext}>{'>'}</button>
             </div>
           </div>
         </div>

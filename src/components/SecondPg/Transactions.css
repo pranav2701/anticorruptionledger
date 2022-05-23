@@ -2,7 +2,7 @@
     display: none;
   }
 
-  button {
+  .direct {
       background-color: antiquewhite;
       display:block;
       height: 40px;
@@ -64,4 +64,11 @@
     justify-content: center;
     align-items: center;
     
+  }
+
+  .ConnectWallet {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    display: flex;
   }
