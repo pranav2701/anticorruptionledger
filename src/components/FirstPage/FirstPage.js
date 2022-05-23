@@ -1,40 +1,31 @@
 import React from "react";
-import Kerala from "../OrgChart/Kerala";
 import NGOList from "../OrgChart/NGOList";
 import "./FirstPage.css";
-import { useState } from "react";
-import Bangalore from "../OrgChart/Bangalore";
-import Assam from "../OrgChart/Assam";
+// import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function FirstPage() {
-  const [sourceOrigin, setSourceOrigin] = useState("home");
-  const [clicked, setClicked] = useState(false);
-  let clickHandler = (event) => {
-    setClicked(true);
-    setSourceOrigin(event.target.id);
-  };
+  // const [sourceOrigin, setSourceOrigin] = useState("");
 
-  if (!clicked) {
-    return (
-      <div className="fp-div">
-        <NGOList
-          name="Kerala Floods"
-          id="kerala"
-          onClick={() => clickHandler}
-        />
-        <NGOList
-          name="Bangalore Floods"
-          id="bangalore"
-          onClick={() => clickHandler}
-        />
-        <NGOList name="Assam Floods" id="assam" onClick={() => clickHandler} />
-      </div>
-    );
-  } else {
-    if (sourceOrigin === "assam") return <Assam />;
-    else if (sourceOrigin === "bangalore") return <Bangalore />;
-    else if (sourceOrigin === "kerala") return <Kerala />;
-    else return <FirstPage />;
-  }
+  // const navigate = useNavigate();
+  // let clickHandler = (event) => {
+  //   setSourceOrigin(event.target.id);
+  //   navigate(`./${sourceOrigin}`, { replace: true });
+  // };
+  return (
+    <div className="fp-div">
+      <Link to="/kerala">
+        <NGOList name="Kerala Floods" id="kerala" />
+      </Link>
+
+      <Link to="/bangalore">
+        <NGOList name="Bangalore Floods" id="bangalore" />
+      </Link>
+
+      <Link to="/assam">
+        <NGOList name="Assam Floods" id="assam" />
+      </Link>
+    </div>
+  );
 }
 export default FirstPage;

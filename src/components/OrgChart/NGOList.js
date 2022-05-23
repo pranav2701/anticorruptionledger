@@ -1,9 +1,9 @@
 import React from "react";
 import "./NGOList.css";
 
-function NGOList({ name, onClick, id }) {
+function NGOList({ name, id }) {
   return (
-    <div className="ngoDiv" onClick={onClick(name)}>
+    <div className="ngoDiv">
       <h2 id={id}>{name}</h2>
     </div>
   );
