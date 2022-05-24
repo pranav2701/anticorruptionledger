@@ -1,0 +1,12 @@
+.outer-table {
+  border: 10px solid gray;
+}
+
+.heading-table {
+  border: 6px solid green;
+}
+
+.table-tabs {
+  border: 3px solid pink;
+  cursor: pointer;
+}
