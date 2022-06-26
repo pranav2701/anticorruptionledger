@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
+<<<<<<< HEAD
     "@web3-react/core": "^6.1.9",
     "@web3-react/injected-connector": "^6.0.7",
     "babel-polyfill": "6.26.0",
@@ -22,6 +23,10 @@
     "ethers": "^5.6.9",
     "identicon.js": "^2.3.3",
     "node-polyfill-webpack-plugin": "^2.0.0",
+=======
+    "@walletconnect/web3-provider": "^1.7.8",
+    "axios": "^0.27.2",
+>>>>>>> 28f7fb1bab351e7e72db689bef10a67981745f2b
     "react": "^18.1.0",
     "react-bootstrap": "1.0.0-beta.5",
     "react-dom": "^18.1.0",
