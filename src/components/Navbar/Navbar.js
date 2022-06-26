@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ account }) => {
   return (
     <nav className="main-nav">
       <div className="logo">
