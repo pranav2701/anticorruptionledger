@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 
-const Navbar = ({ account }) => {
+const Navbar = () => {
   return (
     <nav className="main-nav">
       <div className="logo">
@@ -16,9 +16,14 @@ const Navbar = ({ account }) => {
           </Link>
         </span>
       </div>
+      <div className="menu-link">
+        <span id="menu-content">
+          <Link to="/create-cause" className="create-cause">
+            Create A Cause
+          </Link>
+        </span>
+      </div>
     </nav>
-
-    // </BrowserRouter>
   );
 };
 export default Navbar;

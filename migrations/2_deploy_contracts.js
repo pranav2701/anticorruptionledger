@@ -1,7 +1,5 @@
-const AntiCorruption = artifacts.require("AntiCorruption");
+const AntiCorruption = artifacts.require("./AntiCorruption.sol");
 
-module.exports = async function (deployer, newtork, accounts) {
-    await deployer.deploy(AntiCorruption)
-    const anticorruption = await AntiCorruption.deployed();
-
-}
+module.exports = function (deployer) {
+    deployer.deploy(AntiCorruption);
+};
