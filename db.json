@@ -1,0 +1,108 @@
+{
+  "causes": [
+    {
+      "causeName": "Guwhati floods",
+      "targetAmount": "3000000000000000000",
+      "description": "bdbs",
+      "receiverAddress": "0x9fD12256d77D4fE2637A6f7100d9DD9d1bCce817",
+      "route": "/guwhati-floods",
+      "id": 1
+    },
+    {
+      "causeName": "Assam flodos",
+      "targetAmount": "3000000000000000000",
+      "description": "jdfjdbdfbdj",
+      "receiverAddress": "0x9fD12256d77D4fE2637A6f7100d9DD9d1bCce817",
+      "route": "/assam-floods",
+      "id": 2
+    },
+    {
+      "causeName": "bro floods",
+      "targetAmount": "3000000000000000000",
+      "description": "hdufdudu",
+      "receiverAddress": "0x9fD12256d77D4fE2637A6f7100d9DD9d1bCce817",
+      "route": "/bro-floods",
+      "id": 3
+    },
+    {
+      "causeName": "dam overlfow",
+      "targetAmount": "6000000000000000000",
+      "description": "help us pls",
+      "receiverAddress": "0x9fD12256d77D4fE2637A6f7100d9DD9d1bCce817",
+      "route": "dam-overlfow",
+      "id": 4
+    },
+    {
+      "causeName": "Bengaluru floods",
+      "targetAmount": "288888888000000",
+      "description": "help",
+      "receiverAddress": "0x9fD12256d77D4fE2637A6f7100d9DD9d1bCce817",
+      "route": "bengaluru-floods",
+      "id": 5
+    },
+    {
+      "causeName": "chennai overflow",
+      "targetAmount": "6000000000000000000",
+      "description": "save chennai",
+      "receiverAddress": "0x9fD12256d77D4fE2637A6f7100d9DD9d1bCce817",
+      "route": "chennai-overflow",
+      "id": 6
+    },
+    {
+      "causeName": "eth floods",
+      "targetAmount": "6000000000000000000",
+      "description": "save eth pls",
+      "receiverAddress": "0x9fD12256d77D4fE2637A6f7100d9DD9d1bCce817",
+      "route": "eth-floods",
+      "id": 7
+    },
+    {
+      "causeName": "rockstar floods",
+      "targetAmount": "6000000000000000000",
+      "description": "post malone",
+      "receiverAddress": "0x9fD12256d77D4fE2637A6f7100d9DD9d1bCce817",
+      "route": "rockstar-floods",
+      "id": 8
+    },
+    {
+      "causeName": "i am a rockstar",
+      "targetAmount": "288888888000000",
+      "description": "poppin pillies",
+      "receiverAddress": "0x9fD12256d77D4fE2637A6f7100d9DD9d1bCce817",
+      "route": "i-am-a-rockstar",
+      "id": 9
+    },
+    {
+      "causeName": "unstoppable ",
+      "targetAmount": "6000000000000000000",
+      "description": "ohh my godd",
+      "receiverAddress": "0x9fD12256d77D4fE2637A6f7100d9DD9d1bCce817",
+      "route": "unstoppable-",
+      "id": 10
+    },
+    {
+      "causeName": "Guwhati floods",
+      "targetAmount": "3000000000000000000",
+      "description": "ncn",
+      "receiverAddress": "0x9fD12256d77D4fE2637A6f7100d9DD9d1bCce817",
+      "route": "guwhati-floods",
+      "id": 11
+    },
+    {
+      "causeName": "Kabali",
+      "targetAmount": "288888888000000",
+      "description": "anna",
+      "receiverAddress": "0x9fD12256d77D4fE2637A6f7100d9DD9d1bCce817",
+      "route": "kabali",
+      "id": 12
+    },
+    {
+      "causeName": "nerupudda",
+      "targetAmount": "3000000000000000000",
+      "description": "dmdfdpfd",
+      "receiverAddress": "0x9fD12256d77D4fE2637A6f7100d9DD9d1bCce817",
+      "route": "nerupudda",
+      "id": 13
+    }
+  ]
+}

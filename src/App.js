@@ -7,15 +7,38 @@ import Assam from "./components/OrgChart/Assam";
 import Navbar from "./components/Navbar/Navbar";
 import About from "./components/Navbar/About";
 import { ethers } from "ethers";
-import { ANTI_ADDRESS, ANTI_ABI } from "./config";
 import CreateCause from "./components/CreateCause/CreateCause";
+import ABI from "../build/contracts/AntiCorruption.json";
+import axios from "axios";
+import IndividualCauses from "./components/IndividualCauses/IndividualCauses";
 
 function App() {
   const [data, setdata] = useState({
     address: null,
     Balance: null,
   });
-  const [finalAmount, setFinalAmount] = useState(0);
+  let ANTI_ADDRESS = ABI.networks[5777].address;
+  let ANTI_ABI = ABI.abi;
+
+  console.log(ANTI_ADDRESS, ANTI_ABI);
+
+  const [causesList, setCausesList] = useState([]);
+  let url = "http://localhost:4000/causes";
+
+  const getAllCauses = () => {
+    axios
+      .get(url)
+      .then((result) => {
+        setCausesList(result.data);
+      })
+      .then(console.log(causesList));
+  };
+
+  useEffect(
+    getAllCauses,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  );
 
   // Button handler button for handling a
   // request event for metamask
@@ -60,36 +83,42 @@ function App() {
     getbalance(account);
   };
 
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
-  const signer = provider.getSigner();
-
-  async function getContract() {
-    const anti = new ethers.Contract(ANTI_ADDRESS, ANTI_ABI, signer);
-    console.log(anti);
-
-    let target = await anti.finalAmount();
-    console.log(ethers.utils.formatEther(target));
-    setFinalAmount(ethers.utils.formatEther(target));
-  }
-
-  getContract();
-
   return (
     <div>
       <Navbar />
-      {/* <Login /> */}
       <h1>Address:{data.address}</h1>
       <h1>Balance:{data.Balance}</h1>
-      <h1>Final Amount: {finalAmount}</h1>
       <button onClick={btnhandler}>Connect</button>
 
       <Routes>
-        <Route exact path="/" element={<FirstPage />}></Route>
+        <Route
+          exact
+          path="/"
+          element={<FirstPage causesListProp={causesList} />}
+        ></Route>
         <Route exact path="/kerala" element={<Kerala />}></Route>
         <Route exact path="/bangalore" element={<Bangalore />}></Route>
         <Route exact path="/assam" element={<Assam />}></Route>
         <Route path="/about" element={<About />} />
         <Route path="/create-cause" element={<CreateCause />} />
+        {causesList.map((cause) => {
+          return (
+            <Route
+              key={cause.id}
+              exact
+              path={cause.route}
+              element={
+                <IndividualCauses
+                  id={cause.id}
+                  causeName={cause.causeName}
+                  targetAmount={cause.targetAmount}
+                  description={cause.description}
+                  receiverAddress={cause.receiverAddress}
+                />
+              }
+            />
+          );
+        })}
       </Routes>
     </div>
   );

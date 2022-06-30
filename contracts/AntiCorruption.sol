@@ -8,6 +8,7 @@ contract AntiCorruption
     struct Cause{
 
         string  cause_name ;
+        string causeDescription;
         uint256 targetAmount;
         mapping(address=>uint256) donorsAndAmount;
         address payable finalReceiver;
@@ -16,14 +17,15 @@ contract AntiCorruption
 
     }
 
-    Cause[] causeArray;
+    Cause[] public causeArray;
    
 
-    function setCauseName(string memory causeNameInput ,uint256 targetInput,address payable finalTargetReceiver)public 
+    function setCauseName(string memory causeNameInput ,string memory causeDescInput,uint256 targetInput,address payable finalTargetReceiver)public 
     {
       
        Cause memory cause ;
        cause.cause_name =causeNameInput;
+       cause.causeDescription=causeDescInput;
        cause.targetAmount = targetInput;
        cause.finalReceiver = finalTargetReceiver;
        cause.balanceAmount=0;
@@ -78,6 +80,7 @@ contract AntiCorruption
      function transferAmount(uint id) public payable
      {
         require(balanceOfCause(id)>=targetAmountOfCause(id),"Final amount not yet achieved.");
+        require(msg.sender==causeArray[id-1].finalReceiver,"Only the receiver can initiate transfer.");
         uint i=0;
         for(i=0;i<causeArray.length;i++)
          {
