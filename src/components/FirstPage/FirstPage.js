@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import NGOList from "../OrgChart/NGOList";
 import "./FirstPage.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -23,7 +22,7 @@ function FirstPage({ causesListProp }) {
   );
   return (
     <div className="fp-div">
-      <h1>Causes</h1>
+      <h1 className="causes-heading">Causes</h1>
 
       {causesList.map((cause) => {
         return (
@@ -39,17 +38,6 @@ function FirstPage({ causesListProp }) {
           </Link>
         );
       })}
-      <Link to="/kerala">
-        <NGOList name="Kerala Floods" id="kerala" />
-      </Link>
-
-      <Link to="/bangalore">
-        <NGOList name="Bangalore Floods" id="bangalore" />
-      </Link>
-
-      <Link to="/assam">
-        <NGOList name="Assam Floods" id="assam" />
-      </Link>
     </div>
   );
 }

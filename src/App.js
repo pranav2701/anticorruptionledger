@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FirstPage from "./components/FirstPage/FirstPage";
 import { Routes, Route } from "react-router-dom";
-import Kerala from "./components/OrgChart/Kerala";
-import Bangalore from "./components/OrgChart/Bangalore";
-import Assam from "./components/OrgChart/Assam";
 import Navbar from "./components/Navbar/Navbar";
 import About from "./components/Navbar/About";
 import { ethers } from "ethers";
@@ -11,11 +8,13 @@ import CreateCause from "./components/CreateCause/CreateCause";
 import ABI from "../build/contracts/AntiCorruption.json";
 import axios from "axios";
 import IndividualCauses from "./components/IndividualCauses/IndividualCauses";
+import "./App.css";
 
 function App() {
   const [data, setdata] = useState({
     address: null,
     Balance: null,
+    connectionStatus: "Wallet not connected",
   });
   let ANTI_ADDRESS = ABI.networks[5777].address;
   let ANTI_ABI = ABI.abi;
@@ -68,6 +67,7 @@ function App() {
         setdata({
           address: address,
           Balance: ethers.utils.formatEther(balance),
+          connectionStatus: "Wallet connected",
         });
       });
   };
@@ -84,11 +84,15 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="AppComponent">
       <Navbar />
-      <h1>Address:{data.address}</h1>
-      <h1>Balance:{data.Balance}</h1>
-      <button onClick={btnhandler}>Connect</button>
+
+      <div className="contract-wrapper">
+        <p>Wallet Address:{data.address}</p>
+        <p>Balance:{data.Balance}</p>
+        <p>Wallet status:{data.connectionStatus}</p>
+        <button onClick={btnhandler}>Connect Wallet</button>
+      </div>
 
       <Routes>
         <Route
@@ -96,9 +100,6 @@ function App() {
           path="/"
           element={<FirstPage causesListProp={causesList} />}
         ></Route>
-        <Route exact path="/kerala" element={<Kerala />}></Route>
-        <Route exact path="/bangalore" element={<Bangalore />}></Route>
-        <Route exact path="/assam" element={<Assam />}></Route>
         <Route path="/about" element={<About />} />
         <Route path="/create-cause" element={<CreateCause />} />
         {causesList.map((cause) => {

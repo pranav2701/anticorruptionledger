@@ -7,7 +7,6 @@ const About = () => {
     <div>
       <h3>ABOUT US</h3>
       <div>
-        {/* <p>{balance}</p> */}
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab hic culpa
           rem consequuntur provident, reprehenderit quis vel incidunt laborum id

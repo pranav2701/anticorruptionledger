@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.AppComponent {
+  background-image: linear-gradient(to right, #f9ceee, #b1bce6);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+.contract-wrapper {
+  text-align: center;
+  padding: 5px;
+  line-height: 33px;
+  margin: 4px;
+}
+
+.contract-wrapper button {
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 5%;
+  font-size: 25px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.contract-wrapper button:hover {
+  background-image: linear-gradient(to right, #f9ceee, #b1bce6);
+  border-color: black;
+  color: white;
+}

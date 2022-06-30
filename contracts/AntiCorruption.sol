@@ -86,8 +86,8 @@ contract AntiCorruption
          {
              if(causeArray[i].causeId==id)
              {
-                 causeArray[i].balanceAmount=0;
-                 causeArray[i].finalReceiver.transfer(causeArray[i].targetAmount);
+                causeArray[i].finalReceiver.transfer(causeArray[i].balanceAmount);
+                causeArray[i].balanceAmount=0;
              }
          }
 

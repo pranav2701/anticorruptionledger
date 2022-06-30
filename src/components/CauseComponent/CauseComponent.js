@@ -1,4 +1,5 @@
 import React from "react";
+import "./CauseComponent.css";
 
 function CauseComponent({
   id,
@@ -8,15 +9,8 @@ function CauseComponent({
   receiverAddress,
 }) {
   return (
-    <div
-      id={id}
-      style={{
-        backgroundColor: "yellow",
-        border: "2px solid black",
-        cursor: "pointer",
-      }}
-    >
-      <h1>{causeName}</h1>
+    <div id={id} className="causeComponentElement">
+      <h2>{causeName}</h2>
     </div>
   );
 }
