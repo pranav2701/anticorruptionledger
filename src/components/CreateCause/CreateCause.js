@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ethers } from "ethers";
 import ABI from "../../../build/contracts/AntiCorruption.json";
+import "./CreateCause.css";
+
 let ANTI_ADDRESS = ABI.networks[5777].address;
 let ANTI_ABI = ABI.abi;
 
@@ -66,43 +68,37 @@ function CreateCause() {
 
   return (
     <div className="createCause">
+      <h1 className="causeTitle">Create a cause</h1>
       <form onSubmit={createCauseOnSubmit}>
-        <label htmlFor="cause_name">Enter the cause name</label>
-        <input type="text" id="cause_name" />
+        <label htmlFor="cause_name">Cause name</label>
+        <br />
+        <input type="text" className="textInput" id="cause_name" />
         <br />
         <br />
-        <label htmlFor="cause_target_amount">
-          Enter the Target amount for the cause
-        </label>
-        <input type="text" id="cause_target_amount" />
+        <label htmlFor="cause_target_amount">Target amount for the cause</label>
+        <br />
+        <input type="text" className="textInput" id="cause_target_amount" />
         <br />
         <br />
-        <label htmlFor="cause_description">
-          Enter the Description for the cause
-        </label>
-        <br />
+        <label htmlFor="cause_description">Description of the cause</label>
         <br />
         <textarea
           name="cause_description"
           id="cause_description"
-          cols="30"
+          cols="50"
           rows="10"
         ></textarea>
         <br />
         <br />
         <label htmlFor="cause_receiver_address">
-          Enter the Receiver Address of the cause
+          Receiver Address of the cause
         </label>
-        <input type="text" id="cause_receiver_address" />
+        <br />
+        <input type="text" className="textInput" id="cause_receiver_address" />
         <br />
         <br />
-        <input type="submit" />
+        <input type="submit" value="Create cause" />
       </form>
-
-      <h1>Causes</h1>
-      {causesList.map((causeItem) => {
-        return <h1 key={causeItem.id}>{causeItem.causeName}</h1>;
-      })}
     </div>
   );
 }

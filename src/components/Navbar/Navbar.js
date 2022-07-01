@@ -23,6 +23,13 @@ const Navbar = () => {
           </Link>
         </span>
       </div>
+      <div className="menu-link">
+        <span id="menu-content">
+          <Link to="/my-wallet" className="my-wallet">
+            My Wallet
+          </Link>
+        </span>
+      </div>
     </nav>
   );
 };

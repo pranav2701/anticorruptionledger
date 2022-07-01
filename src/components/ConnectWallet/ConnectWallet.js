@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
+import "./ConnectWallet.css";
 
 function ConnectWallet() {
-  const [data, setData] = useState("");
+  const [data, setdata] = useState({
+    address: null,
+    Balance: null,
+    connectionStatus: "Not connected",
+  });
   // Button handler button for handling a
   // request event for metamask
   const btnhandler = () => {
@@ -28,9 +33,10 @@ function ConnectWallet() {
       })
       .then((balance) => {
         // Setting balance
-        setData({
+        setdata({
           address: address,
           Balance: ethers.utils.formatEther(balance),
+          connectionStatus: "Connected",
         });
       });
   };
@@ -38,14 +44,24 @@ function ConnectWallet() {
   // Function for getting handling all events
   const accountChangeHandler = (account) => {
     // Setting an address data
-    setData({
+    setdata({
       address: account,
     });
 
     // Setting a balance
-    // getbalance(account);
+    getbalance(account);
   };
-  return <button onClick={btnhandler}>Connect Wallet</button>;
+  return (
+    <div className="connect-wallet">
+      <h1 className="walletTitle">My Wallet</h1>
+      <div className="connect-wallet-child">
+        <p>Wallet Address:{data.address}</p>
+        <p>Balance:{data.Balance}</p>
+        <p>Wallet status:{data.connectionStatus}</p>
+        <button onClick={btnhandler}>Connect Wallet</button>
+      </div>
+    </div>
+  );
 }
 
 export default ConnectWallet;

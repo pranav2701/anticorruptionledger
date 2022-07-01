@@ -1,0 +1,47 @@
+.createCause {
+  text-align: center;
+  margin: 10px;
+  padding-bottom: 105px;
+}
+
+.causeTitle {
+  padding: 35px;
+  font-size: 35px;
+  color: white;
+}
+
+.textInput {
+  font-size: 30px;
+  border-radius: 15px;
+  border: 2px solid #9a86a4;
+}
+
+.textInput:focus {
+  outline: 2px solid #fad4d4;
+}
+
+#cause_description {
+  font-size: 15px;
+  border-radius: 15px;
+  padding: 10px;
+  border: 2px solid #9a86a4;
+}
+
+#cause_description:focus {
+  outline: 2px solid #fad4d4;
+}
+
+input[type="submit"] {
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 5%;
+  font-size: 25px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-image: linear-gradient(to right, #f9ceee, #b1bce6);
+  border-color: black;
+  color: white;
+}
