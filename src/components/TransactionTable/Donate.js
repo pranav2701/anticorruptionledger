@@ -8,13 +8,25 @@ const provider = new ethers.providers.Web3Provider(window.ethereum);
 const signer = provider.getSigner();
 const anti = new ethers.Contract(ANTI_ADDRESS, ANTI_ABI, signer);
 
+console.log(anti);
+
 function Donate({ id, causeName, targetAmount, description, receiverAddress }) {
   let handleSubmit = async (e) => {
     e.preventDefault();
     let donatedAmount = e.target.donationAmount.value;
-    console.log(e.target.donationAmount.value);
-
-    await anti.causeArray[id - 1].donate(id, {});
+    try {
+      if (!window.ethereum) {
+        alert("Metamask not installed.Kindly install it to maje transactions");
+      } else {
+        const tx = await signer.sendTransaction({
+          to: ANTI_ADDRESS,
+          value: donatedAmount,
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
+    await anti.donate(donatedAmount);
   };
   return (
     <div>
