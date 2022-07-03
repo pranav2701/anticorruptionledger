@@ -1,6 +1,12 @@
 .ViewTransactions {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 30px;
-    margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 30px;
+  margin-left: 20px;
+}
+
+table,
+tr,
+td {
+  border: 2px solid black;
 }

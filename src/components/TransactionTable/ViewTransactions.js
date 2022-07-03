@@ -20,8 +20,8 @@ function ViewTransactions({
   const [donorAmountArray, setDonorAmountArray] = useState([]);
 
   const getDonorList = async () => {
-    let donorAddressList = await anti.causeArray[id - 1].donorAddressList;
-    let donorAmountList = await anti.causeArray[id - 1].donorAmountList;
+    let donorAddressList = await anti.donorsAddress(id);
+    let donorAmountList = await anti.donorsList(id);
 
     setDonorAddressArray(donorAddressList);
     setDonorAmountArray(donorAmountList);
@@ -40,10 +40,11 @@ function ViewTransactions({
         </thead>
 
         <tbody>
-          {donorAddressArray.map((address) => {
+          {donorAddressArray.map((donor, index) => {
             return (
               <tr>
-                <td>{{ address }}</td>
+                <td>{donorAddressArray[index]}</td>
+                <td>{ethers.utils.formatEther(donorAmountArray[index])}</td>
               </tr>
             );
           })}
