@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ABI from "../../../build/contracts/AntiCorruption.json";
 import { ethers } from "ethers";
+import "./ViewTransactions.css";
 
 let ANTI_ADDRESS = ABI.networks[5777].address;
 let ANTI_ABI = ABI.abi;

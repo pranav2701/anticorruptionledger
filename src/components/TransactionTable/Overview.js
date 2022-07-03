@@ -1,4 +1,5 @@
 import React from "react";
+import "./Overview.css"
 
 function Overview({ description }) {
   return (
