@@ -11,15 +11,20 @@ const anti = new ethers.Contract(ANTI_ADDRESS, ANTI_ABI, signer);
 console.log(anti);
 
 function Donate({ id, causeName, targetAmount, description, receiverAddress }) {
-  // const getBalance = async () => {
-  //   let balAmount = await anti.balanceOfCause(id);
-  //   let balAmountInEth = ethers.utils.formatEther(balAmount);
-  //   return balAmountInEth;
-  // };
+  var balAmount;
+  const [balAmountInEth, setBalAmountInEth] = useState("");
 
-  // let initalBalance = getBalance();
-  // console.log(initalBalance);
-  const [balanceOfCause, setBalanceOfCause] = useState(0);
+  const getBalance = async () => {
+    balAmount = await anti.balanceOfCause(id);
+    let tempAmount = ethers.utils.formatEther(balAmount);
+    setBalAmountInEth(tempAmount);
+    return tempAmount;
+  };
+
+  getBalance().then((amount) => {
+    setBalAmountInEth(amount);
+  });
+
   let handleSubmit = async (e) => {
     e.preventDefault();
     let donatedAmount = e.target.donationAmount.value;
@@ -37,34 +42,48 @@ function Donate({ id, causeName, targetAmount, description, receiverAddress }) {
         if (tx.value > 0) {
           await anti.donateAmount(id, tx.from, donatedAmount);
           let balAmount = await anti.balanceOfCause(id);
-          setBalanceOfCause(ethers.utils.formatEther(balAmount));
+          setBalAmountInEth(ethers.utils.formatEther(balAmount));
         }
       }
     } catch (err) {
       console.log(err);
     }
   };
-  return (
-    <div>
-      <h1>Donate to {causeName}</h1>
-      <h2>Target amount : {ethers.utils.formatEther(targetAmount)} ETH </h2>
-      <h2>Total donation amount achieved : {balanceOfCause} ETH</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="receiverAddressInput">Receiver Address </label>
-        <input
-          type="text"
-          id="receiverAddressInput"
-          value={receiverAddress}
-          readOnly
-        />
-        <br />
-        <label htmlFor="donationAmount">Enter the amount in Wei </label>
-        <input type="text" id="donationAmount" />
-        <br />
-        <button type="submit">Pay</button>
-      </form>
-    </div>
-  );
+
+  if (balAmountInEth < targetAmount) {
+    return (
+      <div>
+        <h1>Donate to {causeName}</h1>
+        <h2>Target amount : {ethers.utils.formatEther(targetAmount)} ETH </h2>
+        <h2>Total donation amount achieved : {balAmountInEth} ETH</h2>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="receiverAddressInput">Receiver Address </label>
+          <input
+            type="text"
+            id="receiverAddressInput"
+            value={receiverAddress}
+            readOnly
+          />
+          <br />
+          <label htmlFor="donationAmount">Enter the amount in Wei </label>
+          <input type="text" id="donationAmount" />
+          <br />
+          <button type="submit">Pay</button>
+        </form>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <h1>
+          {causeName} has successfully reached it's target amount.Thanks for the
+          support
+        </h1>
+        <h2>Target amount : {ethers.utils.formatEther(targetAmount)} ETH </h2>
+        <h2>Total donation amount achieved : {balAmountInEth} ETH</h2>
+      </div>
+    );
+  }
 }
 
 export default Donate;

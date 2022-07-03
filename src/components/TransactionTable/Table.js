@@ -4,7 +4,6 @@ import { useState } from "react";
 import Overview from "./Overview";
 import ViewTransactions from "./ViewTransactions";
 import Donate from "./Donate";
-import Transfer from "./Transfer";
 
 function Table({ id, causeName, targetAmount, description, receiverAddress }) {
   const [content, setContent] = useState("overview");

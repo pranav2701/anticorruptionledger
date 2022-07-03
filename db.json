@@ -7,6 +7,22 @@
       "receiverAddress": "0x51aF3C5d4231BAdE58F44c1Da4F579B326A6Ea6C",
       "route": "eth-floods",
       "id": 1
+    },
+    {
+      "causeName": "saaransh floods",
+      "targetAmount": "6000000000000000000",
+      "description": "sdfndf",
+      "receiverAddress": "0x51aF3C5d4231BAdE58F44c1Da4F579B326A6Ea6C",
+      "route": "saaransh-floods",
+      "id": 2
+    },
+    {
+      "causeName": "Bengaluru floods",
+      "targetAmount": "6000000000000000000",
+      "description": "djd",
+      "receiverAddress": "0x51aF3C5d4231BAdE58F44c1Da4F579B326A6Ea6C",
+      "route": "bengaluru-floods",
+      "id": 3
     }
   ]
 }
