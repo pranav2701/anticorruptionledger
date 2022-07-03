@@ -10,7 +10,7 @@ function IndividualCauses({
 }) {
   return (
     <div id={id}>
-      <h1>{causeName} Ledger</h1>
+      {/* <h1>{causeName} Ledger</h1> */}
       <Table
         id={id}
         causeName={causeName}

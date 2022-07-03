@@ -17,6 +17,8 @@ function Table({ id, causeName, targetAmount, description, receiverAddress }) {
       <div className="transaction-table">
         <div className="outer-table">
           <div className="heading-table">
+          <h1 className="cause">{causeName} Ledger</h1>
+
             <div id="overview" className="table-tabs" onClick={handleClick}>
               Overview
             </div>
@@ -48,6 +50,8 @@ function Table({ id, causeName, targetAmount, description, receiverAddress }) {
       <div className="transaction-table">
         <div className="outer-table">
           <div className="heading-table">
+          <h1 className="cause">{causeName} Ledger</h1>
+
             <div id="overview" className="table-tabs" onClick={handleClick}>
               Overview
             </div>
@@ -80,6 +84,8 @@ function Table({ id, causeName, targetAmount, description, receiverAddress }) {
       <div className="transaction-table">
         <div className="outer-table">
           <div className="heading-table">
+          <h1 className="cause">{causeName} Ledger</h1>
+          
             <div id="overview" className="table-tabs" onClick={handleClick}>
               Overview
             </div>
