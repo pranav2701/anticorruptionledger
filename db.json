@@ -23,6 +23,14 @@
       "receiverAddress": "0x51aF3C5d4231BAdE58F44c1Da4F579B326A6Ea6C",
       "route": "bengaluru-floods",
       "id": 3
+    },
+    {
+      "causeName": "Testing Cause",
+      "targetAmount": "6000000000000000000",
+      "description": "Nothing",
+      "receiverAddress": "0x9054e5413DbD1df315dd0E4563B206b594176ECF",
+      "route": "testing-cause",
+      "id": 4
     }
   ]
 }

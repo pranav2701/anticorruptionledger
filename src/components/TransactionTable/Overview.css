@@ -1,8 +1,10 @@
 .overview {
     width: 70%;
-    /* display: flex;
-    justify-content: center; */
     padding-bottom: 30px;
     text-align: center;
     margin: auto;
+}
+
+.overviewdesc {
+    margin-top: 30px;
 }

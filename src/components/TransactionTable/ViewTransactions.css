@@ -5,8 +5,23 @@
   margin-left: 20px;
 }
 
-table,
-tr,
+
 td {
-  border: 2px solid black;
+    border: none;
+    padding: 15px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    padding-top: 50px;
+}
+
+.viewHeading {
+    font-weight: 500;
+    font-size: x-large;
+    color: rgb(84, 84, 84);
+    text-align: center;
 }

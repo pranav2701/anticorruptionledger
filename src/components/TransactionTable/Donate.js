@@ -82,13 +82,16 @@ function Donate({ id, causeName, targetAmount, description, receiverAddress }) {
     );
   } else {
     return (
-      <div className="altHead">
-        <h1>
+      <div className="donateComplete">
+        <h2>
           {causeName} has successfully reached it's target amount.Thanks for the
-          support.
-        </h1>
-        <h2>Target amount : {ethers.utils.formatEther(targetAmount)} ETH </h2>
-        <h2>Total donation amount achieved : {balAmountInEth} ETH</h2>
+          support
+        </h2>
+        <br />
+        <br />
+        <h3>Target amount : {ethers.utils.formatEther(targetAmount)} ETH </h3>
+        <br />
+        <h3>Total donation amount achieved : {balAmountInEth} ETH</h3>
       </div>
     );
   }

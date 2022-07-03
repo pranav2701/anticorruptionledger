@@ -29,8 +29,8 @@ function ViewTransactions({
 
   getDonorList();
   return (
-    <div>
-      View Transactions of {causeName}
+    <div >
+      <h1 className="viewHeading">View Transactions of {causeName}</h1>
       <table>
         <thead>
           <tr>
@@ -40,7 +40,7 @@ function ViewTransactions({
         </thead>
 
         <tbody>
-          {donorAddressArray.map((donor, index) => {
+        {donorAddressArray.map((donor, index) => {
             return (
               <tr>
                 <td>{donorAddressArray[index]}</td>

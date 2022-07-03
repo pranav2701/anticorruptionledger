@@ -42,3 +42,10 @@
     border: none;
     width: 250px;
 }
+
+.donateComplete {
+    margin: auto;
+    padding-bottom: 15px;
+    padding-top: 5px;
+    text-align: center;
+}
