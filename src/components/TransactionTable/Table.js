@@ -31,9 +31,6 @@ function Table({ id, causeName, targetAmount, description, receiverAddress }) {
             <div id="donate" className="table-tabs" onClick={handleClick}>
               Donate
             </div>
-            <div id="transfer" className="table-tabs" onClick={handleClick}>
-              Transfer amount to NGO
-            </div>
           </div>
           <br />
           <br />
@@ -64,9 +61,6 @@ function Table({ id, causeName, targetAmount, description, receiverAddress }) {
             </div>
             <div id="donate" className="table-tabs" onClick={handleClick}>
               Donate
-            </div>
-            <div id="transfer" className="table-tabs" onClick={handleClick}>
-              Transfer amount to NGO
             </div>
           </div>
 
@@ -100,47 +94,10 @@ function Table({ id, causeName, targetAmount, description, receiverAddress }) {
             <div id="donate" className="table-tabs" onClick={handleClick}>
               Donate
             </div>
-            <div id="transfer" className="table-tabs" onClick={handleClick}>
-              Transfer amount to NGO
-            </div>
           </div>
           <br />
           <br />
           <Donate
-            id={id}
-            causeName={causeName}
-            targetAmount={targetAmount}
-            description={description}
-            receiverAddress={receiverAddress}
-          />
-        </div>
-      </div>
-    );
-  } else if (content === "transfer") {
-    return (
-      <div className="transaction-table">
-        <div className="outer-table">
-          <div className="heading-table">
-            <div id="overview" className="table-tabs" onClick={handleClick}>
-              Overview
-            </div>
-            <div
-              id="view-transactions"
-              className="table-tabs"
-              onClick={handleClick}
-            >
-              View Transactions
-            </div>
-            <div id="donate" className="table-tabs" onClick={handleClick}>
-              Donate
-            </div>
-            <div id="transfer" className="table-tabs" onClick={handleClick}>
-              Transfer amount to NGO
-            </div>
-          </div>
-          <br />
-          <br />
-          <Transfer
             id={id}
             causeName={causeName}
             targetAmount={targetAmount}

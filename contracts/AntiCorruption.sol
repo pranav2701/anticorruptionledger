@@ -14,6 +14,10 @@ contract AntiCorruption
         address payable finalReceiver;
         uint256 causeId;
         uint256 balanceAmount;
+        address[] donorAddressList;
+        uint256[] donorAmountList;
+
+        
 
     }
 
@@ -29,8 +33,7 @@ contract AntiCorruption
        cause.targetAmount = targetInput;
        cause.finalReceiver = finalTargetReceiver;
        cause.balanceAmount=0;
-       cause.causeId=causeArray.length+1;  
-
+       cause.causeId=causeArray.length+1; 
        causeArray.push(cause);
        
     }
@@ -38,63 +41,40 @@ contract AntiCorruption
 
      function balanceOfCause(uint id ) public view returns(uint256)
      {
-         uint i=0;
-         for(i=0;i<causeArray.length;i++)
-         {
-             if(causeArray[i].causeId==id)
-             {
-                 return causeArray[i].balanceAmount;
-             }
-         }
+        return causeArray[id-1].balanceAmount;
      }
 
      
      function targetAmountOfCause(uint id ) public view returns(uint256)
      {
-         uint i=0;
-         for(i=0;i<causeArray.length;i++)
-         {
-             if(causeArray[i].causeId==id)
-             {
-                 return causeArray[i].targetAmount;
-             }
-         }
+            return causeArray[id-1].targetAmount;
+
      }
 
-     function donate(uint id) public payable
+     function donateAmount(uint id,address donorAddress,uint256 donatedAmount) public
      {
-        require(msg.value>0,"You need to spend more eth");
-        uint i=0;
-        for(i=0;i<causeArray.length;i++)
-         {
-             if(causeArray[i].causeId==id)
-             {
-                 causeArray[i].balanceAmount+=msg.value;
-                 causeArray[i].donorsAndAmount[msg.sender]+=msg.value;
-             }
-         }
-       
+        causeArray[id-1].donorAddressList.push(donorAddress);
+        causeArray[id-1].donorAmountList.push(donatedAmount);
+        causeArray[id-1].balanceAmount+=donatedAmount;
+
      }
 
 
-     function transferAmount(uint id) public payable
+     function donorsAddress(uint id) public view returns(address[] memory)
      {
-        require(balanceOfCause(id)>=targetAmountOfCause(id),"Final amount not yet achieved.");
-        require(msg.sender==causeArray[id-1].finalReceiver,"Only the receiver can initiate transfer.");
-        uint i=0;
-        for(i=0;i<causeArray.length;i++)
-         {
-             if(causeArray[i].causeId==id)
-             {
-                causeArray[i].finalReceiver.transfer(causeArray[i].balanceAmount);
-                causeArray[i].balanceAmount=0;
-             }
-         }
+        return causeArray[id-1].donorAddressList;
+     }
 
+     function donorsList(uint id) public view returns(uint[] memory)
+     {
+        return causeArray[id-1].donorAmountList;
      }
 
 
 
+   
+
+  
 
     
 }
