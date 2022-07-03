@@ -85,7 +85,7 @@ function Donate({ id, causeName, targetAmount, description, receiverAddress }) {
       <div className="donateComplete">
         <h2>
           {causeName} has successfully reached it's target amount.Thanks for the
-          support
+          support.
         </h2>
         <br />
         <br />

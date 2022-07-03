@@ -1,10 +1,14 @@
 .overview {
-    width: 70%;
-    padding-bottom: 30px;
-    text-align: center;
-    margin: auto;
+  width: 70%;
+  padding-bottom: 30px;
+  text-align: center;
+  margin: auto;
+}
+
+.overview h2 {
+  color: rgb(84, 84, 84);
 }
 
 .overviewdesc {
-    margin-top: 30px;
+  margin-top: 30px;
 }

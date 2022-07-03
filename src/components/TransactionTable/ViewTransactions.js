@@ -29,7 +29,7 @@ function ViewTransactions({
 
   getDonorList();
   return (
-    <div >
+    <div>
       <h1 className="viewHeading">View Transactions of {causeName}</h1>
       <table>
         <thead>
@@ -40,11 +40,13 @@ function ViewTransactions({
         </thead>
 
         <tbody>
-        {donorAddressArray.map((donor, index) => {
+          {donorAddressArray.map((donor, index) => {
             return (
-              <tr>
-                <td>{donorAddressArray[index]}</td>
-                <td>{ethers.utils.formatEther(donorAmountArray[index])} ETH</td>
+              <tr key={`donor` + index}>
+                <td key={`address` + index}>{donorAddressArray[index]}</td>
+                <td key={`amount` + index}>
+                  {ethers.utils.formatEther(donorAmountArray[index])} ETH
+                </td>
               </tr>
             );
           })}
