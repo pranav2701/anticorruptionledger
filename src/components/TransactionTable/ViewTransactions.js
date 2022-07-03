@@ -44,7 +44,7 @@ function ViewTransactions({
             return (
               <tr>
                 <td>{donorAddressArray[index]}</td>
-                <td>{ethers.utils.formatEther(donorAmountArray[index])}</td>
+                <td>{ethers.utils.formatEther(donorAmountArray[index])} ETH</td>
               </tr>
             );
           })}

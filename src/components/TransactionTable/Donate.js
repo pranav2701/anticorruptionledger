@@ -53,12 +53,13 @@ function Donate({ id, causeName, targetAmount, description, receiverAddress }) {
 
   if (balAmountInEth < targetAmount) {
     return (
-      <><div className="DonateHeader">
-        <h1>Donate to {causeName}</h1>
-        <h2>Target amount: {ethers.utils.formatEther(targetAmount)} ETH </h2>
-        <h2>Total donation amount achieved: {balAmountInEth} ETH</h2>
-      </div>
-      <div>
+      <>
+        <div className="DonateHeader">
+          <h1>Donate to {causeName}</h1>
+          <h2>Target amount: {ethers.utils.formatEther(targetAmount)} ETH </h2>
+          <h2>Total donation amount achieved: {balAmountInEth} ETH</h2>
+        </div>
+        <div>
           <form onSubmit={handleSubmit} id="DonatePay">
             <label htmlFor="receiverAddressInput">Receiver Address </label>
             <input
@@ -66,22 +67,25 @@ function Donate({ id, causeName, targetAmount, description, receiverAddress }) {
               id="receiverAddressInput"
               value={receiverAddress}
               className="amountto"
-              readOnly />
+              readOnly
+            />
             <br />
             <label htmlFor="donationAmount">Enter the amount in Wei </label>
             <input type="text" id="donationAmount" className="amount" />
             <br />
-            <button type="submit" className="pay">Pay</button>
+            <button type="submit" className="pay">
+              Pay
+            </button>
           </form>
-        
-        </div></>
+        </div>
+      </>
     );
   } else {
     return (
-      <div>
+      <div className="altHead">
         <h1>
           {causeName} has successfully reached it's target amount.Thanks for the
-          support
+          support.
         </h1>
         <h2>Target amount : {ethers.utils.formatEther(targetAmount)} ETH </h2>
         <h2>Total donation amount achieved : {balAmountInEth} ETH</h2>

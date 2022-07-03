@@ -55,9 +55,9 @@ function ConnectWallet() {
     <div className="connect-wallet">
       <h1 className="walletTitle">My Wallet</h1>
       <div className="connect-wallet-child">
-        <p>Wallet Address:{data.address}</p>
-        <p>Balance:{data.Balance}</p>
-        <p>Wallet status:{data.connectionStatus}</p>
+        <p>Wallet Address: {data.address}</p>
+        <p>Balance: {data.Balance}</p>
+        <p>Wallet status: {data.connectionStatus}</p>
         <button onClick={btnhandler}>Connect Wallet</button>
       </div>
     </div>
