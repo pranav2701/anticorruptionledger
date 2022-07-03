@@ -51,32 +51,32 @@ function Donate({ id, causeName, targetAmount, description, receiverAddress }) {
     }
   };
 
-  // if (balAmountInEth < targetAmount) {
-  //   return (
-  //     <><div className="DonateHeader">
-  //       <h1>Donate to {causeName}</h1>
-  //       <h2>Target amount: {ethers.utils.formatEther(targetAmount)} ETH </h2>
-  //       <h2>Total donation amount achieved: {balAmountInEth} ETH</h2>
-  //     </div>
-  //     <div>
-  //         <form onSubmit={handleSubmit} id="DonatePay">
-  //           <label htmlFor="receiverAddressInput">Receiver Address </label>
-  //           <input
-  //             type="text"
-  //             id="receiverAddressInput"
-  //             value={receiverAddress}
-  //             className="amountto"
-  //             readOnly />
-  //           <br />
-  //           <label htmlFor="donationAmount">Enter the amount in Wei </label>
-  //           <input type="text" id="donationAmount" className="amount" />
-  //           <br />
-  //           <button type="submit" className="pay">Pay</button>
-  //         </form>
+  if (balAmountInEth < targetAmount) {
+    return (
+      <><div className="DonateHeader">
+        <h1>Donate to {causeName}</h1>
+        <h2>Target amount: {ethers.utils.formatEther(targetAmount)} ETH </h2>
+        <h2>Total donation amount achieved: {balAmountInEth} ETH</h2>
+      </div>
+      <div>
+          <form onSubmit={handleSubmit} id="DonatePay">
+            <label htmlFor="receiverAddressInput">Receiver Address </label>
+            <input
+              type="text"
+              id="receiverAddressInput"
+              value={receiverAddress}
+              className="amountto"
+              readOnly />
+            <br />
+            <label htmlFor="donationAmount">Enter the amount in Wei </label>
+            <input type="text" id="donationAmount" className="amount" />
+            <br />
+            <button type="submit" className="pay">Pay</button>
+          </form>
         
-  //       </div></>
-  //   );
-  // } else {
+        </div></>
+    );
+  } else {
     return (
       <div className="donateComplete">
         <h2>
@@ -91,6 +91,6 @@ function Donate({ id, causeName, targetAmount, description, receiverAddress }) {
       </div>
     );
   }
-// }
+}
 
 export default Donate;
