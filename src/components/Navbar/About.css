@@ -1,0 +1,18 @@
+.aboutp {
+    font-weight: 500;
+    width: 50%;
+    text-align: justify;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.about {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.aboutus{
+    padding-left: 30px;
+    text-align: center;
+    color: white !important;
+}

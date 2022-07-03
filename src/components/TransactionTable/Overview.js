@@ -1,10 +1,11 @@
 import React from "react";
 import "./Overview.css"
 
-function Overview({ description }) {
+function Overview({ description,causeName }) {
   return (
     <div className="overview">
-      <p>{description}</p>
+      <h2>Overview of {causeName}</h2>
+      <p className="overviewdesc">{description}</p>
     </div>
   );
 }
